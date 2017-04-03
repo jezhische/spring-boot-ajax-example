@@ -1,0 +1,21 @@
+„тобы гит работал, нужно в Settings > Git, выбрано Config source *Effective
+открыть файл локальной конфигурации (кнопка Edit local .git/config)
+и вставить туда строчку autocrlf = false,
+так что вид документа будет примерно следующим:
+
+[core]
+	bare = false
+	repositoryformatversion = 0
+	filemode = false
+	symlinks = false
+	ignorecase = true
+	logallrefupdates = true
+  autocrlf = false
+[remote "origin"]
+	url = https://github.com/jezhische/exercises.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+
+	Ќо по другой рекомендации https://githowto.com/ru/setup  нужно сделать в gitbush:
+git config --global core.autocrlf true
+git config --global core.safecrlf true
+но как-то не работает...
